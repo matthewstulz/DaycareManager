@@ -33,6 +33,20 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Framework for styling
+gem 'bootstrap', '~> 4.0.0'
+# Forms
+gem 'simple_form', '~> 3.5'
+# User Authentication
+gem 'devise', '~> 4.4', '>= 4.4.1'
+# Won't reload page on submitting information
+gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
+# Admin user role
+gem 'rolify', '~> 5.2'
+gem 'cancancan', '~> 2.1', '>= 2.1.3'
+# Slugs for URLs
+gem 'friendly_id', '~> 5.2', '>= 5.2.3'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
