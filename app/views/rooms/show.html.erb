@@ -4,6 +4,17 @@
   <strong>Title:</strong>
   <%= @room.title %>
 </p>
+<p>
+  <% @children.each do |child| %>
+  <p>
+      <%= child.first_name %>
+      <%= child.last_name %>
+    <% end %>
+  </p>
+</p>
+
+<%= link_to 'New Child', new_child_path %>
+
 
 <%= link_to 'Edit', edit_room_path(@room) %> |
 <%= link_to 'Back', rooms_path %>

@@ -10,6 +10,7 @@ class RoomsController < ApplicationController
   # GET /rooms/1
   # GET /rooms/1.json
   def show
+    @children = Child.where('room_id = ?', @room.id)
   end
 
   # GET /rooms/new
