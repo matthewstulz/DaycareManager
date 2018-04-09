@@ -46,6 +46,10 @@ gem 'rolify', '~> 5.2'
 gem 'cancancan', '~> 2.1', '>= 2.1.3'
 # Slugs for URLs
 gem 'friendly_id', '~> 5.2', '>= 5.2.3'
+# Image uploading
+gem 'carrierwave', '~> 1.2', '>= 1.2.2'
+gem 'mini_magick', '~> 4.8'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
