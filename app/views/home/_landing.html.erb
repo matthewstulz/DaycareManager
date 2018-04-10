@@ -1,6 +1,8 @@
 <div class="container my-3">
   <h1>Rooms</h1>
-  <%= link_to 'New Room', new_room_path, :class => "btn btn-primary" %>
+  <% if has_role?(:admin) %>
+    <%= link_to 'New Room', new_room_path, :class => "btn btn-primary" %>
+  <% end %>
   <div class="row">
     <% @rooms.each do |room| %>
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 my-2">
@@ -11,8 +13,10 @@
           <%= image_tag room.room_image_url, :class => "img-thumbnail" %>
         <% end %>  
       <% end %>
-      <%= link_to 'Edit', edit_room_path(room), :class => "btn btn-primary mt-1" %>
-      <%= link_to 'Destroy', room, :class => "btn btn-danger mt-1", method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% if has_role?(:admin) %>
+        <%= link_to 'Edit', edit_room_path(room), :class => "btn btn-primary mt-1" %>
+        <%= link_to 'Destroy', room, :class => "btn btn-danger mt-1", method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
     </div>
     <% end %>
   </div>

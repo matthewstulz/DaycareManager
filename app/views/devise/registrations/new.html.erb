@@ -17,6 +17,9 @@
 		<div class="form-group">
 	    	<%= f.input :password_confirmation, required: true, input_html: { class: "form-control"}, wrapper: false, label_html: { class: "label" } %>
 		</div>
+		
+		<%= f.input :roles, :as => :select, :collection => Role.all %>
+
 	
 	  <%= f.button :submit, "Sign up", class:"btn btn-primary" %>
 	<% end %>
