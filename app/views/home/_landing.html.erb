@@ -1,18 +1,19 @@
-<h1>Rooms</h1>
-
-<div class="container">
+<div class="container my-3">
+  <h1>Rooms</h1>
+  <%= link_to 'New Room', new_room_path, :class => "btn btn-primary" %>
   <div class="row">
     <% @rooms.each do |room| %>
-    <div class="col-sm-4">
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 my-2">
       <%= link_to room do %>
-        <%= room.title %>
-        <%= image_tag room.room_image_url, :class => "img-thumbnail" %>
+        <% if room.room_image.blank? %>
+          <% room.title %>
+        <% else %>
+          <%= image_tag room.room_image_url, :class => "img-thumbnail" %>
+        <% end %>  
       <% end %>
-      <%= link_to 'Edit', edit_room_path(room) %>
-      <%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%= link_to 'Edit', edit_room_path(room), :class => "btn btn-primary mt-1" %>
+      <%= link_to 'Destroy', room, :class => "btn btn-danger mt-1", method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>
     <% end %>
   </div>
-  <%= link_to 'New Room', new_room_path %>
 </div>
-

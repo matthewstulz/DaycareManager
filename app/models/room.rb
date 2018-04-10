@@ -1,7 +1,10 @@
 class Room < ApplicationRecord
-    has_many :children
-    
-    mount_uploader :room_image, RoomImageUploader
+    has_many :children, dependent: :destroy
 
-    validates :title, presence: true
+    mount_uploader :room_image, RoomImageUploader
+    validates :title, :room_image, presence: true
+    
+    def custom_room_sort
+        title.scan(/\d/).join('').to_i
+    end
 end

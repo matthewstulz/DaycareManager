@@ -1,17 +1,17 @@
-
-<%= simple_form_for(@child) do |f| %>
+<div class="class col-xs-12 col-sm-9 col-md-9 col-lg-6 col-xl-4 mx-auto mt-5">
+	<h2>New Child</h2>
+	<%= simple_form_for(@child) do |f| %>
   <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :first_name %>
-    <%= f.input :last_name %>
-    <div class="field">
-      <%= f.label :room_id %><br />
-      <%= f.collection_select :room_id, Room.order(:title), :id, :title %>
+	  <div class="form-group">
+	    <%= f.input :first_name, required: true, input_html: { class: "form-control"}, wrapper: false, label_html: { class: "label" } %>
+	  </div>
+    <div class="form-group">
+    	<%= f.input :last_name, required: true, input_html: { class: "form-control"}, wrapper: false, label_html: { class: "label" } %>
     </div>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+		<div class="form-group">
+		  <label for="inputState">Room</label>
+        <%= f.collection_select(:room_id, Room.all.sort_by(&:custom_room_sort), :id, :title, {prompt: "Choose room", required: true}, {class: "form-control"}) %>
+		</div>
+	  <%= f.button :submit, "Create", class:"btn btn-primary mt-3" %>
+	<% end %>
+</div>
