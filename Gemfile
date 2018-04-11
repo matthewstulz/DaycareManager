@@ -49,6 +49,7 @@ gem 'friendly_id', '~> 5.2', '>= 5.2.3'
 # Image uploading
 gem 'carrierwave', '~> 1.2', '>= 1.2.2'
 gem 'mini_magick', '~> 4.8'
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
 
 
 group :development, :test do

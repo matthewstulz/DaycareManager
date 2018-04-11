@@ -1,4 +1,4 @@
-<div class="container my-3">
+<div class="container">
   <h1><%= @room.title %></h1>
     <% if has_role?(:admin) || has_role?(:teacher) %>
       <%= link_to 'New Child', new_child_path, :class => "btn btn-primary" %>

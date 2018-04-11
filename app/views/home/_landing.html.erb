@@ -1,4 +1,4 @@
-<div class="container my-3">
+<div class="container">
   <h1>Rooms</h1>
   <% if has_role?(:admin) %>
     <%= link_to 'New Room', new_room_path, :class => "btn btn-primary" %>
@@ -21,3 +21,24 @@
     <% end %>
   </div>
 </div>
+<footer>
+  <hr>
+  <div class="row text-center">
+  	<div class="col-12">
+  		<h2>Connect with us</h2>
+  	</div>
+  	<div class="col-12">
+  	  <a href="https://www.facebook.com"><%= fa_stacked_icon "facebook-square", base: "square-o", class: "fa-2x" %></a>
+  	  <a href="https://www.twitter.com"><%= fa_stacked_icon "twitter-square", base: "square-o", class: "fa-2x" %></a>
+  	  <a href="https://www.instagram.com"><%= fa_stacked_icon "instagram", base: "square-o", class: "fa-2x" %></a>
+  	</div>
+  </div>
+
+  <!--Copyright-->
+  <div class="footer-copyright py-3 text-center">
+      © 2018 Copyright:
+  </div>
+  <!--/Copyright-->
+
+</footer>
+<!--/Footer-->
