@@ -1,5 +1,6 @@
-<div class="class col-xs-12 col-sm-9 col-md-9 col-lg-6 col-xl-4 mx-auto pt-5">
-  <h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="bg">
+	<div class="class col-xs-12 col-sm-9 col-md-9 col-lg-6 col-xl-4 mx-auto pt-5">
+  <h2 class="text-center">Edit <%= resource_name.to_s.humanize %></h2>
 
 	<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 			<%= f.error_notification %>
@@ -30,9 +31,10 @@
 	    	<%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true, input_html: { class: "form-control"}, wrapper: false, label_html: { class: "label" } %>
 		</div>
 	
-	  <%= f.button :submit, "Update", class:"btn btn-primary" %>
+	  <%= f.button :submit, "Update", class:"btn btn-primary btn-block" %>
 	<% end %>
 	<hr/>
-	<h3 class="title is-5">Cancel my account</h3>
-  <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+	<h3 class="title is-5 text-center">Cancel my account</h3>
+  <p class="text-center">Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+</div>
 </div>

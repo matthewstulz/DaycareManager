@@ -17,8 +17,13 @@
 @import "bootstrap";
 @import "font-awesome";
 
+html {
+    height: 100%;
+}
+
 body {
-  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    height: 100%;
 }
 
 h1,
@@ -27,8 +32,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 700;
+    font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 700;
 }
 
 .navbar-custom {
@@ -93,6 +98,25 @@ a {
 .fa-instagram {
     color: #517fa8;
 }
+.fa-linkedin-square {
+    color: #0077B5;
+}
+.fa-google-plus-square {
+    color: #C63D2D;
+}
 .fa-facebook-square:hover, .fa-twitter-square:hover, .fa-instagram:hover {
     color: #ffe1cd;
+}
+
+.bg {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(to bottom right, rgba(43,88,118,.9), rgba(250,208,196,.9)), url(learning.jpg);
+    background-size: cover;
+    color: white;
+}
+
+.full {
+    height: 100%;
 }

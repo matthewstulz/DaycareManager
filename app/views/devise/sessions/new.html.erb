@@ -1,20 +1,22 @@
-<div class="class col-xs-12 col-sm-9 col-md-9 col-lg-6 col-xl-4 mx-auto pt-5">
-	<h2>Log in</h2>
-	<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-	  	<div class="form-group">
-	    	<%= f.input :email, required: false, input_html: { class: "form-control"}, wrapper: false, label_html: { class: "label" } %>
-	    </div>
+<div class="bg">
+	<div class="col-xs-12 col-sm-9 col-md-9 col-lg-6 col-xl-4 mx-auto pt-5">
+		<h2 class="text-center">Log in</h2>
+		<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+		  	<div class="form-group">
+		    	<%= f.input :email, required: false, input_html: { class: "form-control"}, wrapper: false, label_html: { class: "label" } %>
+		    </div>
+		
+		  	<div class="form-group">
+		    	<%= f.input :password, required: false, input_html: { class: "form-control"}, wrapper: false, label_html: { class: "label" } %>
+			</div>
 	
-	  	<div class="form-group">
-	    	<%= f.input :password, required: false, input_html: { class: "form-control"}, wrapper: false, label_html: { class: "label" } %>
-		</div>
-
-		<div class="form-check">
-		    <%= f.input :remember_me, input_html: { class: "form-check-input"}, wrapper: false, as: :boolean if devise_mapping.rememberable? %>
-		</div>
-	
-	  <%= f.button :submit, "Log in", class:"btn btn-primary" %>
-	<% end %>
-	<br/>
-	<%= render "devise/shared/links" %>
+			<div class="form-check mx-auto">
+			    <%= f.input :remember_me, input_html: { class: "form-check-input"}, wrapper: false, as: :boolean if devise_mapping.rememberable? %>
+			</div>
+		
+		  <%= f.button :submit, "Log in", class:"btn btn-primary btn-block" %>
+		<% end %>
+		<br/>
+		<%= render "devise/shared/links" %>
+	</div>
 </div>
