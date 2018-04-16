@@ -1,5 +1,4 @@
 <div class="container">
-  <h1>Rooms</h1>
   <% if has_role?(:admin) %>
     <%= link_to 'New Room', new_room_path, :class => "btn btn-primary" %>
   <% end %>

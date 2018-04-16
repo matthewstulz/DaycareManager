@@ -1,22 +1,24 @@
-<div class="container">
-  <h1><%= @room.title %></h1>
-    <% if has_role?(:admin) || has_role?(:teacher) %>
-      <%= link_to 'New Child', new_child_path, :class => "btn btn-primary" %>
-    <% end %>
-    <div class="row">
-    <% @children.each do |child| %>
-      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 my-2">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title"><%= child.full_name %></h5>
-              <% if has_role?(:admin) || has_role?(:teacher) %>
-                <%= link_to 'Edit Child', edit_child_path(child), :class => "btn btn-primary mt-1" %>
-                <a href="#" class="btn btn-primary mt-1">Go somewhere</a>
-              <% end %>
-          </div>
-        </div>
-      </div>
-    <% end %>
-    </div>
+<h1 class="text-center header-bg py-5"><%= @room.title %></h1>
+<div class="text-center">
+<% if has_role?(:admin) || has_role?(:teacher) %>
+  <%= link_to 'New Child', new_child_path, :class => "btn btn-primary" %>
+<% end %>
 </div>
-
+<div class="row">
+<% @children.each do |child| %>
+  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 my-2">
+    <div class="card">
+      <div class="card-header card-header-bg">
+        <%= child.full_name %>
+      </div>
+      <div class="card-body bg-light">
+        <h5 class="card-title"></h5>
+          <% if has_role?(:admin) || has_role?(:teacher) %>
+            <%= link_to 'Edit Child', edit_child_path(child), :class => "btn btn-primary mt-1" %>
+            <a href="#" class="btn btn-primary mt-1">Go somewhere</a>
+          <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>
+</div>
