@@ -1,7 +1,7 @@
 <h1 class="text-center header-bg py-5"><%= @room.title %></h1>
 <div class="text-center">
 <% if has_role?(:admin) || has_role?(:teacher) %>
-  <%= link_to 'New Child', new_child_path, :class => "btn btn-primary" %>
+  <%= link_to 'New Child', new_child_path(:room_id => @room.id), :class => "btn btn-primary" %>
 <% end %>
 </div>
 <div class="row">
@@ -15,6 +15,7 @@
         <h5 class="card-title"></h5>
           <% if has_role?(:admin) || has_role?(:teacher) %>
             <%= link_to 'Edit Child', edit_child_path(child), :class => "btn btn-primary mt-1" %>
+            <%= link_to 'Destroy', child, :class => "btn btn-danger mt-1", method: :delete, data: { confirm: 'Are you sure?' } %>
             <a href="#" class="btn btn-primary mt-1">Go somewhere</a>
           <% end %>
       </div>

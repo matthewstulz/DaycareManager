@@ -1,6 +1,19 @@
 <div class="bg">
 	<h1 class="text-center header-bg py-5 mb-5">Editing Child</h1>
-
-    <%= render 'form', child: @child %>
+    <div class="col-xs-12 col-sm-9 col-md-9 col-lg-6 col-xl-4 mx-auto">
+    	<%= simple_form_for(@child) do |f| %>
+    	<%= f.error_notification %>
+    	  <div class="form-group">
+    	    <%= f.input :first_name, required: true, input_html: { class: "form-control"}, wrapper: false, label_html: { class: "label" } %>
+    	  </div>
+    	<div class="form-group">
+    		<%= f.input :last_name, required: true, input_html: { class: "form-control"}, wrapper: false, label_html: { class: "label" } %>
+    	</div>
+    		<div class="form-group">
+    		  <label for="inputState">Room</label>
+    	    <%= f.collection_select(:room_id, Room.all.sort_by(&:custom_room_sort), :id, :title, {:selected => @child.room_id}, {class: "form-control"}) %>
+    		</div>
+    	  <%= f.button :submit, "Update", class:"btn btn-primary btn-block mt-3" %>
+    	<% end %>
+    </div>
 </div>
-

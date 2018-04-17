@@ -7,10 +7,12 @@
 	<div class="form-group">
 		<%= f.input :last_name, required: true, input_html: { class: "form-control"}, wrapper: false, label_html: { class: "label" } %>
 	</div>
-		<div class="form-group">
-		  <label for="inputState">Room</label>
-	    <%= f.collection_select(:room_id, Room.all.sort_by(&:custom_room_sort), :id, :title, {prompt: "Choose room", required: true}, {class: "form-control"}) %>
-		</div>
+	  <%= f.hidden_field :room_id %>
+
+		<!--<div class="form-group">-->
+		<!--  <label for="inputState">Room</label>-->
+	 <!--   <%#= f.collection_select(:room_id, Room.all.sort_by(&:custom_room_sort), :id, :title, {prompt: "Choose room", required: true}, {class: "form-control"}) %>-->
+		<!--</div>-->
 	  <%= f.button :submit, "Create", class:"btn btn-primary btn-block mt-3" %>
 	<% end %>
 </div>

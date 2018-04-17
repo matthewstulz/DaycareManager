@@ -15,7 +15,9 @@ class ChildrenController < ApplicationController
 
   # GET /children/new
   def new
-    @child = Child.new
+    #@child.room_id = Child.new(params[:room_id].to_h)
+    # @child = Child.new
+    @child = Child.new(:room_id => params[:room_id])
   end
 
   # GET /children/1/edit
