@@ -13,7 +13,7 @@ class RoomsController < ApplicationController
   # GET /rooms/1.json
   def show
     @children = Child.where('room_id = ?', @room.id)
-    @children = @children.sort_by{ |c| c.full_name }
+    @children = @children.sort_by{ |c| c.last_name }
   end
 
   # GET /rooms/new

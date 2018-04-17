@@ -1,18 +1,23 @@
-<%= simple_form_for(@report) do |f| %>
+<div class="col-xs-12 col-sm-9 col-md-9 col-lg-6 col-xl-4 mx-auto">
+  <%= simple_form_for(@report) do |f| %>
   <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :meals %>
-    <%= f.input :naps %>
-    <%= f.input :bathroom %>
-    <%= f.input :activities %>
-    <%= f.input :summary %>
-    <%= f.hidden_field :child_id %>
-
-    <%#= f.input :child_id %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+  <div class="form-group">
+	  <%= f.input :meals, required: false, input_html: { class: "form-control"}, wrapper: false, label_html: { class: "label" } %>
+	</div>
+	<div class="form-group">
+	  <%= f.input :naps, required: false, input_html: { class: "form-control"}, wrapper: false, label_html: { class: "label" } %>
+	</div>
+	<div class="form-group">
+	  <%= f.input :bathroom, required: false, input_html: { class: "form-control"}, wrapper: false, label_html: { class: "label" } %>
+	</div>
+	<div class="form-group">
+	  <%= f.input :activities, required: false, input_html: { class: "form-control"}, wrapper: false, label_html: { class: "label" } %>
+	</div>
+	<div class="form-group">
+	  <%= f.input :summary, required: false, input_html: { class: "form-control"}, wrapper: false, label_html: { class: "label" } %>
+	</div>
+  <div class="form-group">
+	<%= f.hidden_field :child_id %>
+  <%= f.button :submit, "Create Daily Report", class:"btn btn-primary btn-block mt-3" %>
 <% end %>
+</div>

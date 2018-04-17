@@ -14,10 +14,10 @@
       <div class="card-body bg-light">
         <h5 class="card-title"></h5>
           <% if has_role?(:admin) || has_role?(:teacher) %>
-            <%= link_to 'Edit Child', edit_child_path(child), :class => "btn btn-primary mt-1" %>
-            <%= link_to 'Destroy', child, :class => "btn btn-danger mt-1", method: :delete, data: { confirm: 'Are you sure?' } %>
-            <%= link_to 'Add Daily Report', new_report_path(:child_id => child.id), :class => "btn btn-primary mt-1" %>
-            <%= link_to 'Daily Reports', reports_url(:child_id => child.id), :class => "btn btn-primary mt-1" %>
+            <%= link_to 'Edit Child', edit_child_path(child), :class => "btn btn-outline-primary btn-sm mt-1" %>
+            <%= link_to 'Destroy', child, :class => "btn btn-outline-danger btn-sm mt-1", method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%= link_to 'Add Daily Report', new_report_path(:child_id => child.id), :class => "btn btn-outline-primary btn-sm mt-1" %>
+            <%= link_to 'Daily Reports', reports_url(:child_id => child.id), :class => "btn btn-outline-primary btn-sm mt-1" %>
           <% end %>
       </div>
     </div>

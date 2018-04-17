@@ -1,4 +1,4 @@
 class Report < ApplicationRecord
     
-    belongs_to :child, dependent: :destroy
+    belongs_to :child
 end
