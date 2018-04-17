@@ -1,0 +1,32 @@
+<p>
+  <strong>Meals:</strong>
+  <%= @report.meals %>
+</p>
+
+<p>
+  <strong>Naps:</strong>
+  <%= @report.naps %>
+</p>
+
+<p>
+  <strong>Bathroom:</strong>
+  <%= @report.bathroom %>
+</p>
+
+<p>
+  <strong>Activities:</strong>
+  <%= @report.activities %>
+</p>
+
+<p>
+  <strong>Summary:</strong>
+  <%= @report.summary %>
+</p>
+
+<p>
+  <strong>Child:</strong>
+  <%= @report.child_id %>
+</p>
+
+<%= link_to 'Edit', edit_report_path(@report) %> |
+<%= link_to 'Back', reports_path %>

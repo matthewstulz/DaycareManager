@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  meals: MyText
+  naps: MyText
+  bathroom: MyText
+  activities: MyText
+  summary: MyText
+  child_id: 1
+
+two:
+  meals: MyText
+  naps: MyText
+  bathroom: MyText
+  activities: MyText
+  summary: MyText
+  child_id: 1

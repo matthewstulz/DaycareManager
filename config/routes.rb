@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :rooms
   resources :children
+  resources :reports
 
   root 'home#index'
 

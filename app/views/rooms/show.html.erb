@@ -16,7 +16,8 @@
           <% if has_role?(:admin) || has_role?(:teacher) %>
             <%= link_to 'Edit Child', edit_child_path(child), :class => "btn btn-primary mt-1" %>
             <%= link_to 'Destroy', child, :class => "btn btn-danger mt-1", method: :delete, data: { confirm: 'Are you sure?' } %>
-            <a href="#" class="btn btn-primary mt-1">Go somewhere</a>
+            <%= link_to 'Add Daily Report', new_report_path(:child_id => child.id), :class => "btn btn-primary mt-1" %>
+            <%= link_to 'Daily Reports', reports_url(:child_id => child.id), :class => "btn btn-primary mt-1" %>
           <% end %>
       </div>
     </div>
